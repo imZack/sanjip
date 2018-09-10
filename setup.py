@@ -18,7 +18,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Sanji-IO/sanjip",
     packages=setuptools.find_packages(),
-    install_requires=["sh"],
+    install_requires=["ipcalc", "netifaces", "sh"],
     classifiers=(
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
