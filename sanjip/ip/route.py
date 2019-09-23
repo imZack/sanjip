@@ -36,8 +36,10 @@ def add(dest, dev="", src="", nexthop=None):
                 param.append("nexthop")
                 for k, v in nh.iteritems():
                     param.extend([k, v])
+                sh.ip("route", "add", nh.get("via"), "dev", nh.get("dev"))
             sh.ip(*param)
         elif dev:
+            sh.ip("route", "add", src, "dev", dev)
             sh.ip("route", "add", dest, "dev", dev, "via", src)
         else:
             sh.ip("route", "add", dest, "via", src)
